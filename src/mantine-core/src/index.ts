@@ -73,5 +73,6 @@ export * from './components/ThemeIcon';
 export * from './components/Timeline';
 export * from './components/Title';
 export * from './components/Tooltip';
+export * from './components/TransferList';
 export * from './components/Transition';
 export * from './components/TypographyStylesProvider';

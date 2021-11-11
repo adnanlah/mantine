@@ -16,7 +16,7 @@ import {
   Icon,
 } from 'react-feather';
 import { useDidUpdate, useId } from '@mantine/hooks';
-import useStyles, { getIconSize } from './DualList.styles';
+import useStyles, { getIconSize } from './TransferList.styles';
 import { Text, TextProps } from '../Text';
 import { ActionIcon } from '../ActionIcon';
 import { Title } from '../Title';
@@ -24,7 +24,7 @@ import { Paper } from '../Paper';
 import { TextInput, TextInputProps } from '../TextInput';
 import { Checkbox } from '../Checkbox';
 
-export type DualListStylesNames = ClassNames<typeof useStyles>;
+export type TransferListStylesNames = ClassNames<typeof useStyles>;
 
 export interface IListItem {
   id: string;
@@ -54,7 +54,7 @@ const ListItem = ({
   onCheckboxChange,
   ...others
 }: ListItemProps) => {
-  const { classes, cx } = useStyles({ size }, { classNames, styles, name: 'DualListItem' });
+  const { classes, cx } = useStyles({ size }, { classNames, styles, name: 'TransferListItem' });
   const { value, disabled } = item;
 
   const handleClick = (e: React.MouseEvent) => {
@@ -143,7 +143,7 @@ const RenderList: ListComponent = forwardRef(
 
     const stylesProps = { styles, classNames };
 
-    const { classes, cx } = useStyles({ size }, { ...stylesProps, name: 'DualList' });
+    const { classes, cx } = useStyles({ size }, { ...stylesProps, name: 'TransferList' });
 
     const theme = useMantineTheme();
 
@@ -306,12 +306,12 @@ const RenderList: ListComponent = forwardRef(
   }
 );
 
-export interface DualListData {
+export interface TransferListData {
   available: IListItem[];
   selected: IListItem[];
 }
 
-export interface DualListProps extends DefaultProps<DualListStylesNames> {
+export interface TransferListProps extends DefaultProps<TransferListStylesNames> {
   /** Items shown in the available (left) list */
   available: (IListItem | string)[];
 
@@ -337,7 +337,7 @@ export interface DualListProps extends DefaultProps<DualListStylesNames> {
   listComponent?: React.ElementType;
 
   /** Called when data changes (moves between lists). */
-  onChange?: (data: DualListData) => void;
+  onChange?: (data: TransferListData) => void;
 
   /** Placeholder to be shown in the right list when it is empty */
   rightEmptyPlaceholder?: string;
@@ -351,7 +351,7 @@ export interface DualListProps extends DefaultProps<DualListStylesNames> {
   /** ref to right list element */
   rightListRef?: RefObject<HTMLElement>;
 
-  /** Predefined DualList size */
+  /** Predefined TransferList size */
   size?: MantineSize;
 
   /** Optional function to customise which elements are shown */
@@ -366,7 +366,7 @@ export interface DualListProps extends DefaultProps<DualListStylesNames> {
   /** Items shown in the selected (right) list */
   selected: (IListItem | string)[];
 }
-type DualListComponent = (props: DualListProps) => React.ReactElement;
+type TransferListComponent = (props: TransferListProps) => React.ReactElement;
 
 const initializeItems = (items: (IListItem | string)[]): IListItem[] =>
   items.map((item) => {
@@ -376,7 +376,7 @@ const initializeItems = (items: (IListItem | string)[]): IListItem[] =>
     return item as IListItem;
   });
 
-export const DualList: DualListComponent & { displayName?: string } = ({
+export const TransferList: TransferListComponent & { displayName?: string } = ({
   className,
   checkboxes = false,
   size = 'md',
@@ -400,15 +400,15 @@ export const DualList: DualListComponent & { displayName?: string } = ({
   classNames,
   styles,
   ...others
-}: DualListProps) => {
-  const [data, setData] = useState<DualListData>({
+}: TransferListProps) => {
+  const [data, setData] = useState<TransferListData>({
     available: initializeItems(available),
     selected: initializeItems(selected),
   });
 
   const stylesProps = { classNames, styles };
 
-  const { classes, cx } = useStyles({ size }, { ...stylesProps, name: 'DualListList' });
+  const { classes, cx } = useStyles({ size }, { ...stylesProps, name: 'TransferListList' });
 
   const theme = useMantineTheme();
 
@@ -474,4 +474,4 @@ export const DualList: DualListComponent & { displayName?: string } = ({
   );
 };
 
-DualList.displayName = '@mantine/core/DualList';
+TransferList.displayName = '@mantine/core/TransferList';

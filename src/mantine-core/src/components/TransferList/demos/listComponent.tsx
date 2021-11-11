@@ -1,13 +1,13 @@
 import React from 'react';
-import { DualList } from '../DualList';
+import { TransferList } from '../TransferList';
 
 const code = `
 import React from 'react';
-import { DualList } from '../DualList';
+import { TransferList } from '../TransferList';
 
 function Demo() {
   return (
-    <DualList
+    <TransferList
       available={['123', '456', '789']}
       selected={['abc', 'def', 'ghi']}
       listComponent="ul"
@@ -18,7 +18,7 @@ function Demo() {
 
 function Demo() {
   return (
-    <DualList
+    <TransferList
       available={['123', '456', '789']}
       selected={['abc', 'def', 'ghi']}
       listComponent="ul"

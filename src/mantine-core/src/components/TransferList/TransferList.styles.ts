@@ -23,11 +23,11 @@ interface GetSizesProps {
 
 export const getIconSize = ({ size, theme }: GetSizesProps): number => theme.fontSizes[size] + 2;
 
-interface DualListStylesProps {
+interface TransferListStylesProps {
   size: MantineSize;
 }
 
-export default createStyles((theme, { size }: DualListStylesProps) => {
+export default createStyles((theme, { size }: TransferListStylesProps) => {
   const border = `1px solid ${theme.colors.gray[3]}`;
 
   return {

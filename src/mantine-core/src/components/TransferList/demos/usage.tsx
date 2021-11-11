@@ -1,8 +1,8 @@
 import React from 'react';
-import { DualList, DualListProps } from '../DualList';
+import { TransferList, TransferListProps } from '../TransferList';
 
 const codeTemplate = (props: string) => `
-<DualList
+<TransferList
     available={['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']}
     selected={[]}
     size="sm"
@@ -10,9 +10,9 @@ const codeTemplate = (props: string) => `
    ${props}
 />`;
 
-function Wrapper(props: DualListProps) {
+function Wrapper(props: TransferListProps) {
   return (
-    <DualList
+    <TransferList
       available={['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5']}
       selected={[]}
       size="sm"
@@ -23,7 +23,7 @@ function Wrapper(props: DualListProps) {
 
 export const usage: MantineDemo = {
   type: 'configurator',
-  // @ts-ignore - Suppress `{ children?: ReactNode } missing` warning since DualList does not support children
+  // @ts-ignore - Suppress `{ children?: ReactNode } missing` warning since TransferList does not support children
   component: Wrapper,
   codeTemplate,
   configurator: [

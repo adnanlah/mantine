@@ -1,7 +1,7 @@
-import { DualListStylesNames } from './DualList';
+import { TransferListStylesNames } from './TransferList';
 
-export const DualList: Record<DualListStylesNames, string> = {
-  root: 'Root DualList element',
+export const TransferList: Record<TransferListStylesNames, string> = {
+  root: 'Root TransferList element',
   action: 'Action button',
   actions: 'Action button container',
   disabled: 'Disabled list item',

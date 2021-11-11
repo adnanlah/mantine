@@ -1,9 +1,9 @@
 import React, { useRef } from 'react';
-import { DualList } from '../DualList';
+import { TransferList } from '../TransferList';
 
 const code = `
 import React, { useRef } from 'react';
-import { DualList } from '../DualList';
+import { TransferList } from '../TransferList';
 
 function Demo() {
   const leftListRef = useRef<HTMLDivElement>();
@@ -13,7 +13,7 @@ function Demo() {
   };
 
   return (
-    <DualList
+    <TransferList
       available={['123', '456', '789']}
       selected={['abc', 'def', 'ghi']}
       leftListRef={leftListRef}
@@ -31,7 +31,7 @@ function Demo() {
   };
 
   return (
-    <DualList
+    <TransferList
       available={['123', '456', '789']}
       selected={['abc', 'def', 'ghi']}
       leftListRef={leftListRef}

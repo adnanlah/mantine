@@ -1,15 +1,15 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Text } from '../Text/Text';
-import { DualList } from './DualList';
+import { TransferList } from './TransferList';
 import { DarkStory } from '../../../demos';
-import { DualListProps } from '.';
+import { TransferListProps } from '.';
 
-const Wrapper = (props: Partial<DualListProps>) => {
+const Wrapper = (props: Partial<TransferListProps>) => {
   const available = Array.from({ length: 9 }, (_, i) => `Item ${i}`);
   const selected = Array.from({ length: 9 }, (_, i) => `Item 0${i}`);
 
-  return <DualList available={available} selected={selected} {...props} />;
+  return <TransferList available={available} selected={selected} {...props} />;
 };
 
 const sizes = (['xs', 'sm', 'md', 'lg', 'xl'] as const).map((size) => (
@@ -19,7 +19,7 @@ const sizes = (['xs', 'sm', 'md', 'lg', 'xl'] as const).map((size) => (
   </div>
 ));
 
-storiesOf('@mantine/core/DualList', module)
+storiesOf('@mantine/core/TransferList', module)
   .add('General usage', () => <Wrapper />)
   .add('Sizes', () => <div style={{ padding: 10 }}>{sizes}</div>)
   .add('Empty lists', () => (

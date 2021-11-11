@@ -1,17 +1,17 @@
 import React from 'react';
-import { DualList, DualListData } from '../DualList';
+import { TransferList, TransferListData } from '../TransferList';
 
 const code = `
 import React from 'react';
-import { DualList, DualListData } from '@mantine/core';
+import { TransferList, TransferListData } from '@mantine/core';
 
 function Demo() {
-  const handleChange = (data: DualListData) => {
+  const handleChange = (data: TransferListData) => {
     // console.log(data.available);
   };
 
   return (
-    <DualList
+    <TransferList
       available={['Item 1', 'Item 2', 'Item 3']}
       selected={['Item 01', 'Item 02', 'Item 03']}
       onChange={handleChange}
@@ -22,12 +22,12 @@ function Demo() {
 
 function Demo() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const handleChange = (data: DualListData) => {
+  const handleChange = (data: TransferListData) => {
     // console.log(data.available);
   };
 
   return (
-    <DualList
+    <TransferList
       available={['Item 1', 'Item 2', 'Item 3']}
       selected={['Item 01', 'Item 02', 'Item 03']}
       onChange={handleChange}

@@ -1,13 +1,13 @@
 import React from 'react';
-import { DualList } from '../DualList';
+import { TransferList } from '../TransferList';
 
 const code = `
 import React from 'react';
-import { DualList } from '@mantine/core';
+import { TransferList } from '@mantine/core';
 
 function Demo() {
   return (
-    <DualList
+    <TransferList
       available={[]}
       selected={[]}
       emptyPlaceholder="Custom empty list placeholder..."
@@ -19,7 +19,7 @@ function Demo() {
 
 function Demo() {
   return (
-    <DualList
+    <TransferList
       available={[]}
       selected={[]}
       emptyPlaceholder="Custom empty list placeholder..."
