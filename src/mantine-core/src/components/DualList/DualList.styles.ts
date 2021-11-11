@@ -1,10 +1,4 @@
-import {
-  createStyles,
-  getThemeColor,
-  MantineSize,
-  MantineSizes,
-  MantineTheme,
-} from '@mantine/styles';
+import { createStyles, MantineSize, MantineSizes, MantineTheme } from '@mantine/styles';
 
 export const ACTIONS_HEIGHTS: MantineSizes = {
   xs: 20,
@@ -84,9 +78,7 @@ export default createStyles((theme, { size }: DualListStylesProps) => {
     searchBar: {},
     selectedItem: {
       backgroundColor:
-        theme.colorScheme === 'dark'
-          ? theme.colors.dark[4]
-          : getThemeColor({ theme, color: theme.primaryColor, shade: 0 }),
+        theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors[theme.primaryColor][0],
     },
     empty: {},
     disabled: {
